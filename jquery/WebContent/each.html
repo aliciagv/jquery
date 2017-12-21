@@ -1,0 +1,38 @@
+<!--  recorrido a esos DIV y en cada uno, mirar el texto que aparece. Entonces colocaremos como color del texto del DIV el color que aparece escrito en el DIV. Pero con dos casos especiales:
+
+Si el texto del DIV es "white", entonces no queremos hacer nada con ese elemento.
+Si el texto del DIV es "nada", entonces detendremos el bucle y dejaremos de colorear los siguientes elementos. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>	
+<script>
+$(document).ready(function(){
+	$("div").each(function(i){
+		elemento=$(this);
+		if(elemento.html() == "white")
+      return true;
+   if(elemento.html() == "nada")
+      return false;
+   elemento.css("color", elemento.html());
+	})
+})
+</script>
+</head>
+<body>
+<div>red</div>
+<div>blue</div>
+<div>red</div>
+<div>white</div>
+<div>red</div>
+<div>green</div>
+<div>orange</div>
+<div>red</div>
+<div>nada</div>
+<div>red</div>
+<div>blue</div>
+</body>
+</html>

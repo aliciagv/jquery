@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Objetos. Prototipos</title>
+</head>
+<body>
+<script>
+/* Sintaxis de creación de un protoipo de un objeto usando la funcion constructor: */
+function Persona(nom,ape,an){
+	this.nombre=nom;
+	this.apellido=ape;
+	this.ano=an;
+	
+	this.nombreCompleto=function(){
+	return this.nombre + " " + this.apellido;
+	}
+}
+
+var alicia= new Persona("Alicia","Gutierrez",1982);
+var alejandro= new 	Persona("Alejandro","Lazaro",2010);
+/* Añadir una propiedad a un objeto */
+
+alicia.nacionalidad="Inglesa";
+
+alert(alicia.nacionalidad);
+alert(alejandro.nacionalidad); /*undefined, no hemos definido esta propiedad al objeto alejandro */
+
+/*Añadir un método a un objeto*/
+
+alicia.nacimiento=function(){
+	return "Nacimiento en el año" + this.ano;
+}
+alert(alicia.nacimiento()); //Solo se añade a alicia, no a alejandro
+
+/* Añadir una propiedad al prototipo 
+    1. Añadiendo directamente sobre la definición del prototipo
+    2. Mediante la sintaxis: <Nomre_objeto>.prototype.<propiedad>
+*/
+Persona.prototype.muerte="2080";
+alert(alejandro.muerte); 
+
+/* Añadir un método a un prototipo 
+	1. Añadiendo directamente sobre la definición del prototipo
+    2- Mediante la sitanxis: <Nombre_objeto>.prototype.<metodo> =....
+    
+*/
+Persona.prototype.defuncion= function(){
+	return "Defunción en el año " + this.muerte;
+}
+
+var alberto= new Persona("Alberto","Lazaro","1981");
+alert(alberto.nombre);
+alert(alberto.defuncion());
+
+
+</script>
+
+</body>
+</html>

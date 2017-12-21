@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Acceso a atributose</title>
+<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script>
+$(document).ready(function(){
+ $("a").each(function(i){
+      var titulo = $(this).prop("title");
+      alert("Atributo title del enlace " + i + ": " + titulo);
+   });
+   $('a').attr({
+   'style': 'color: #f80'
+});
+   });
+</script>
+</head>
+<body>
+<a id="enlace1" href="http://www.elpais.com" title="Diario El País">El País</a>
+<br>
+<a href="http://www.mozilla.org" title="Fundación Mozilla">Mozilla Fundation</a>
+<br>
+<a href="http://es.openoffice.org/" title="Siute de programas de oficina">Open Office</a>
+</body>
+</html>

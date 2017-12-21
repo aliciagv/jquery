@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script> 
+$(document).ready(function(){
+$("#ocultar").click(function(evento){
+	 event.preventDefault();
+    $("#capaefectos").hide("slow");
+});
+
+$("#mostrar").click(function(evento){
+	 event.preventDefault();
+    $("#capaefectos").show(3000);
+});
+});
+</script>
+</head>
+<body>
+<div id="capaefectos" style="background-color: #cc7700; color:fff; padding:10px;">
+Esto es una capa que nos servirá para hacer efectos!
+</div>
+
+<p>
+<a href="#" id="ocultar">Ocultar la capa</a> | 
+<a href="#" id="mostrar">Mostrar la capa</a> 
+</p>
+</body>
+</html>
